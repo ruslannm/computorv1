@@ -1,5 +1,7 @@
 from argparse import ArgumentParser
-from . import Parser
+from Parser import Parser
+from Solver import Solver
+
     
 if __name__ == "__main__":    
     parser = ArgumentParser()
@@ -8,6 +10,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     try:
         parser = Parser(args.polynom)
+        solver = Solver(parser)
     except (Exception, BaseException) as e:
         print(e)
         exit(1)
